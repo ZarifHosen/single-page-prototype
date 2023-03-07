@@ -3,7 +3,7 @@ import classes from "./AddUsers.module.css";
 import Card from "../UI/Card";
 import Buttons from "../UI/Buttons";
 
-function AddUsers() {
+function AddUsers(props) {
     const [enteredUsername, setEnteredUsername] = useState("");
     const [enteredAge, setEnteredAge] = useState("");
 
@@ -15,9 +15,7 @@ function AddUsers() {
         if (+enteredAge < 1) {
             return;
         }
-
-
-        console.log(enteredUsername, enteredAge);
+        props.onAddUser(enteredUsername, enteredAge);
         setEnteredUsername("");
         setEnteredAge("");
     };
