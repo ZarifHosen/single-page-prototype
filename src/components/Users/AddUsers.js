@@ -3,6 +3,7 @@ import classes from "./AddUsers.module.css";
 import Card from "../UI/Card";
 import Buttons from "../UI/Buttons";
 import Modals from "../UI/Modals"
+import Wrapper from "../Helpers/Wrapper";
 
 function AddUsers(props) {
     const [enteredUsername, setEnteredUsername] = useState("");
@@ -34,7 +35,7 @@ function AddUsers(props) {
     };
 
     return (
-        <div>
+        <Wrapper>
             {/* Render the Modals component  */}
             <Modals error={error} setError={setError} />
             <Card className={classes.input}>
@@ -56,7 +57,7 @@ function AddUsers(props) {
                     <Buttons type="submit">Add User</Buttons>
                 </form>
             </Card>
-        </div>
+        </Wrapper>
     );
 }
 
